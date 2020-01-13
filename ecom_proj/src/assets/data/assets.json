@@ -1,0 +1,37 @@
+[
+    {
+        "filename": "assets1.png",
+        "type": "Zip results",
+        "company": "HP",
+        "uploadeddate": "7/15/2018",
+        "status": "active"
+    },
+    {
+        "filename": "assets2.png",
+        "type": "extract results",
+        "company": "Apple",
+        "uploadeddate": "8/15/2018",
+        "status": "active"
+    },
+    {
+        "filename": "assets3.png",
+        "type": "extract results",
+        "company": "HP",
+        "uploadeddate": "27/15/2018",
+        "status": "inactive"
+    },
+    {
+        "filename": "assets4.png",
+        "type": "Zip",
+        "company": "HP",
+        "uploadeddate": "17/15/2018",
+        "status": "active"
+    },
+    {
+        "filename": "assets5.png",
+        "type": "Zip results",
+        "company": "Honda",
+        "uploadeddate": "8/15/2018",
+        "status": "inactive"
+    }
+]

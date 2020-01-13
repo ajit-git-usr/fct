@@ -1,0 +1,93 @@
+<div class="container h-120">
+  <div class="row">
+    <div class="col-md-3">
+      <div>
+        <a class="navbar-brand">
+          <img src="assets/img/fct.png" class="logo ">
+        </a>
+
+      </div>
+    </div>
+    <div class="col-md-6 ">
+    </div>
+    <div class="col-md-3 ">
+      <ul class="nav navbar-nav ">
+        <li class="active ">
+          <a routerLink="undeDev">
+            <span class="glyphicon glyphicon-user "></span> {{userInfo.userName}}
+          </a>
+        </li>
+        <li class="active c-cursor" (click)="logout()">
+          <a>
+            <span class="glyphicon glyphicon-log-out "></span> LOGOUT
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container-fluid ">
+  <div class="row ">
+    <nav class="navbar navbar-default ">
+      <div class="container ">
+        <ul class="nav navbar-nav">
+          <!-- <li dropdown>
+            <a dropdownToggle class="dropdown-toggle " role="button ">
+              <span class="glyphicon glyphicon-th"> </span> MANAGE
+              <span class="caret "></span>
+            </a> -->
+          <!-- <ul *dropdownMenu class="dropdown-menu ">
+              <li routerLinkActive="active">
+                <a routerLink="jobresults">Jobs</a>
+              </li>
+              <li role="separator " class="divider "></li>
+              <li routerLinkActive="active">
+                <a routerLink="online"> Online</a>
+              </li>
+              <li role="separator " class="divider "></li>
+              <li routerLinkActive="active">
+                <a routerLink="undeDev"> Schedule</a>
+              </li>
+              <li role="separator" class="divider "></li>
+              <li routerLinkActive="active"> 
+                <a routerLink="assets">Assets</a>
+              </li>
+
+            </ul> -->
+          <!-- </li> -->
+          <li class="" routerLinkActive="active">
+            <a routerLink="online">
+              <!-- <span class="glyphicon glyphicon-wrench"></span> -->
+              Products
+            </a>
+          </li>
+           <li class="" routerLinkActive="active">
+            <a routerLink="purchases">
+              <!-- <span class="glyphicon glyphicon-upload"></span>  -->
+              Purchases
+            </a>
+          </li>
+          <!--
+          <li class="" routerLinkActive="active">
+            <a routerLink="download">
+              <span class="glyphicon glyphicon-download"></span> DOWNLOAD
+            </a>
+          </li> -->
+          <!-- <li class="">
+            <a routerLink="/home/dummy" routerLinkActive="active">
+              <span class="glyphicon glyphicon-download"></span> Dummy
+            </a>
+          </li> -->
+
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container ">
+    <div class="row ">
+      <router-outlet>
+      </router-outlet>
+    </div>
+  </div>
+</div>

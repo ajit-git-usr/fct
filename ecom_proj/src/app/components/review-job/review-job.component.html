@@ -1,0 +1,133 @@
+<div class="container">
+  <div class="row">
+    <div class="signup-form m-l-1rem" style="padding: 0;">
+      <form [formGroup]="reviewJob" class="form-horizontal" style="padding: 0;padding-bottom: 1rem;padding-top: 1rem;">
+        <!-- <div class="pageTitle">Review Job</div> -->
+        <div class="pageHeader">Job Information</div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.Type}}
+          </label>
+          <div class="col-xs-6 col-md-6">
+            <input type="text" formControlName="type" class="form-control formFields-height" />
+            <!-- <div *ngIf="submitted && f.jobName.errors" class="invalid-feedback required">
+              <div *ngIf="f.jobName.errors.required">Job Name is required</div>
+            </div> -->
+          </div>
+        </div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.Company}}
+          </label>
+          <div class="col-xs-6 col-md-6">
+            <input type="text" formControlName="company" class="form-control formFields-height" />
+            <!-- <div *ngIf="submitted && f.jobName.errors" class="invalid-feedback required">
+                <div *ngIf="f.jobName.errors.required">Job Name is required</div>
+              </div> -->
+          </div>
+        </div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.jobId}}
+          </label>
+          <div class="col-xs-6 col-md-6">
+            <input type="text" formControlName="jobID" class="form-control formFields-height" />
+            <!-- <div *ngIf="submitted && f.jobName.errors" class="invalid-feedback required">
+                  <div *ngIf="f.jobName.errors.required">Job Name is required</div>
+                </div> -->
+          </div>
+        </div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.jobName}}
+          </label>
+          <div class="col-xs-6 col-md-6">
+            <input type="text" formControlName="jobName" class="form-control formFields-height" />
+            <!-- <div *ngIf="submitted && f.jobName.errors" class="invalid-feedback required">
+                    <div *ngIf="f.jobName.errors.required">Job Name is required</div>
+                  </div> -->
+          </div>
+        </div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.scheduleDate}}
+          </label>
+          <div class="col-xs-6 col-md-6">
+            <input type="text" formControlName="statusDate" class="form-control formFields-height" />
+            <!-- <div *ngIf="submitted && f.jobName.errors" class="invalid-feedback required">
+                      <div *ngIf="f.jobName.errors.required">Job Name is required</div>
+                    </div> -->
+          </div>
+        </div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.scheduleTime}}
+          </label>
+          <div class="col-xs-6 col-md-6">
+            <input type="text" formControlName="statusTime" class="form-control formFields-height" />
+            <!-- <div *ngIf="submitted && f.jobName.errors" class="invalid-feedback required">
+                        <div *ngIf="f.jobName.errors.required">Job Name is required</div>
+                      </div> -->
+          </div>
+        </div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.currentStatus}}
+          </label>
+          <div class="col-xs-6 col-md-6">
+            <input type="text" formControlName="currentStatus" class="form-control formFields-height" />
+            <!-- <div *ngIf="submitted && f.jobName.errors" class="invalid-feedback required">
+                          <div *ngIf="f.jobName.errors.required">Job Name is required</div>
+                        </div> -->
+          </div>
+        </div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.Environment}}
+          </label>
+          <div class="col-xs-6 col-md-6">
+            <input type="text" formControlName="environment" class="form-control formFields-height" />
+            <!-- <div *ngIf="submitted && f.jobName.errors" class="invalid-feedback required">
+                            <div *ngIf="f.jobName.errors.required">Job Name is required</div>
+                          </div> -->
+          </div>
+        </div>
+
+        <div class="row link-row">
+          <span (click)="download('production.xls')">{{linkLabels.productionSummary}}</span>
+          <span (click)="download('controlreport.xls')">{{linkLabels.controlReport}}</span>
+          <span (click)="download('downloadProof.xls')">{{linkLabels.downloadProofs}}</span>
+          <span (click)="approveJob(true)">{{linkLabels.Approve}}</span>
+          <span (click)="approveJob(false)">{{linkLabels.cancelJob}}</span>
+
+        </div>
+        <div style="border: 1px solid #ddd;">
+          <table class="table table-striped" style="margin-bottom: 0;">
+            <thead>
+              <tr class="pageHeader">
+                <th style="padding-top: 0;padding-bottom: 0;padding-left: 2rem;">Job Events</th>
+                <th style="padding-top: 0;padding-bottom: 0; padding-left: 2rem;">Event Date</th>
+                <th style="padding-top: 0;padding-bottom: 0;padding-left: 2rem;">User</th>
+              </tr>
+            </thead>
+          </table>
+          <div style="width:100%;overflow:auto; max-height:100px;">
+            <table class="table table-striped">
+              <tbody>
+                <tr *ngFor="let option of reviewJobEvents">
+                  <td>{{option.jobEvents}}</td>
+                  <td>{{option.eventDate}}</td>
+                  <td>{{option.user}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="h-30 t-align-center padding-all m-t-10">
+            <span [(innerHTML)]="statusMsg"></span>
+          </div>
+        </div>
+        <div class="form-group text-center" style="margin-top: 2rem;text-align: right;">
+          <button class="btn btn-primary" (click)="hidepopUp()" style="outline:none;margin-right: 3.5rem !important;padding: 3px 18px; background-color: #068ff6;">Close</button>
+        </div>
+        <!-- <div class="text-center" style="margin-top: 1rem;">
+          <button type="button" class="btn btn-primary">Close</button>
+        </div> -->
+
+      </form>
+    </div>
+  </div>
+</div>

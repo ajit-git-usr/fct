@@ -1,0 +1,204 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-10">
+        <h4 style=" color: #068ff6;">{{configureLabel.alertHeading}}</h4>
+      </div>
+    </div>
+
+  </div>
+  <form [formGroup]="configureForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-2">
+
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="company" [ngClass]="{ 'required': submitted && f.company.errors }">{{configureLabel.company}}</label>
+            <select required class="form-control" formControlName='company' id="company">
+              <ng-container *ngFor="let option of formDropdownList['companies']">
+                <option *ngIf="option.value" [ngValue]="option.value">{{option.label}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label [ngClass]="{ 'required': submitted && f.format.errors }" for=" format ">{{configureLabel.format}}</label>
+            <select required class="form-control " formControlName="format" id="format ">
+              <ng-container *ngFor="let option of formDropdownList[ 'formats'] ">
+                <option *ngIf="option.value " [ngValue]="option.value ">{{option.label}}</option>
+              </ng-container>
+            </select>
+            <!-- <input type="password " class="form-control " id="inputPassword4 " placeholder="Password "> -->
+          </div>
+        </div>
+
+        <div class="col-md-2 ">
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row ">
+      <div class="col-md-12 ">
+        <div class="col-md-2 ">
+
+        </div>
+
+        <div class="form-row ">
+          <div class="form-group col-md-4 ">
+            <label for="type " [ngClass]="{ 'required': submitted && f.type.errors }">{{configureLabel.type}}</label>
+            <select required class="form-control " formControlName="type" id="type ">
+              <ng-container *ngFor="let option of formDropdownList[ 'types'] ">
+                <option *ngIf="option.value " [ngValue]="option.value ">{{option.label}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div class="form-group col-md-4 ">
+            <label for="TOmail " [ngClass]="{ 'required': submitted && f.tomail.errors }">{{configureLabel.tomail}}</label>
+
+            <input type="text " required formControlName="tomail" placeholder="abc@gmail.com " class="form-control " id="TOmail ">
+          </div>
+        </div>
+        <div class="col-md-2 ">
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row ">
+      <div class="col-md-12 ">
+        <div class="col-md-2 ">
+
+        </div>
+
+        <div class="form-row ">
+          <div class="form-group col-md-4 ">
+            <label for="status " [ngClass]="{ 'required': submitted && f.status.errors }">{{configureLabel.status}}</label>
+            <select class="form-control " required formControlName="status" id="status ">
+              <ng-container *ngFor="let option of formDropdownList[ 'status'] ">
+                <option *ngIf="option.value " [ngValue]="option.value ">{{option.label}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div class="form-group col-md-4 ">
+            <label for="CCmail ">{{configureLabel.ccmail}}</label>
+            <input type="text " class="form-control " formControlName="ccmail" id="CCmail " placeholder="abc@gmail.com,bcd@gmail.com ">
+          </div>
+        </div>
+        <div class="col-md-2 ">
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row ">
+      <div class="col-md-12 ">
+        <div class="col-md-2 ">
+
+        </div>
+
+        <div class="form-row ">
+          <div class="form-group col-md-4 ">
+            <label for="environment " [ngClass]="{ 'required': submitted && f.environment.errors }">{{configureLabel.environment}}</label>
+            <select class="form-control " required formControlName='environment' id="environment ">
+              <ng-container *ngFor="let option of formDropdownList[ 'environments'] ">
+                <option *ngIf="option.value " [ngValue]="option.value ">{{option.label}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div class="form-group col-md-4 ">
+            <label for="BCCmail ">{{configureLabel.bccmail}}</label>
+            <input type="text " class="form-control " formControlName='bccmail' placeholder="abc@gmail.com, bcd@gmail.com
+              "
+              id="BCCmail ">
+          </div>
+        </div>
+        <div class="col-md-2 ">
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row ">
+      <div class="col-md-12 ">
+        <div class="col-md-2 ">
+
+        </div>
+
+        <div class="form-row ">
+
+          <div class="form-group col-md-8 ">
+            <label for="mailSubject " [ngClass]="{ 'required': submitted && f.subject.errors }">{{configureLabel.subject}}</label>
+            <input type="text " required class="form-control " formControlName="subject" id="mailSubject ">
+          </div>
+        </div>
+        <div class="col-md-2 ">
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+    <div class="row ">
+      <div class="col-md-12 ">
+        <div class="col-md-2 ">
+
+        </div>
+
+        <div class="form-row ">
+
+          <div class="form-group col-md-8 ">
+            <label for="mailSubject ">{{configureLabel.bodymail}}</label>
+            <p-editor formControlName="bodymail" [style]="{ 'height': '200px'} "></p-editor>
+            <br />
+
+            <div [(innerHTML)]="statusMsg"></div>
+          </div>
+        </div>
+        <div class="col-md-2 ">
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row ">
+      <div class="col-md-12 ">
+        <div class="col-md-2 ">
+
+        </div>
+        <div class="form-group col-md-8 t-align-right " style="margin-top: 2rem; ">
+
+          <button class="btn app-back-color white-text " style="outline:none ; padding: 3px 18px; margin-right: 10px
+              "
+            type="submit ">{{buttonsLabels.save}}</button>
+          <button class="btn app-back-color white-text " type="button " style="outline:none ; padding: 3px 18px; margin-right:
+              10px ">{{buttonsLabels.sendTestNotifications}}</button>
+          <button class="btn app-back-color white-text " type="button " (click)="initConfigureForm() " style="outline:none
+              ; padding: 3px 18px; ">{{buttonsLabels.clear}}</button>
+        </div>
+        <div class="col-md-2 ">
+
+        </div>
+      </div>
+
+    </div>
+
+  </form>
+</div>

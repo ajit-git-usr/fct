@@ -1,0 +1,24 @@
+{
+    "reviewJobEvents": [
+        {
+            "jobEvents": "Download Proofs",
+            "eventDate": "2018.04.25 01:25:PM",
+            "user": "System"
+        },
+        {
+            "jobEvents": "Awaiting Approval",
+            "eventDate": "2018.04.25 01:25:PM",
+            "user": "System"
+        },
+        {
+            "jobEvents": "Files Received-Processing",
+            "eventDate": "2018.04.25 01:25:PM",
+            "user": "System"
+        },
+        {
+            "jobEvents": "Files Received-Queued",
+            "eventDate": "2018.04.25 01:25:PM",
+            "user": "System"
+        }
+    ]
+}

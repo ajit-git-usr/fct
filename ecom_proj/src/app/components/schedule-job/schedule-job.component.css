@@ -1,0 +1,127 @@
+
+.margin-top-0px{
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-bottom: 0.5rem;
+}
+.custom-dropdown{
+    height: 3rem;min-height: 0;margin-top: 7px;
+}
+.formFields-height{
+    height: 3rem;min-height: 0;margin-top: 7px;
+}
+
+.pageHeader{
+    background-color: #068ff6;
+    /* height: 3rem; */
+    color: #fff;
+    padding-top: 2px;
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: normal;
+    /* margin-top: 3rem; */
+}
+.form-control:focus {
+    border-color:#068ff6;
+}
+.signup-form {
+    width: 50rem;
+    margin-left:35px;
+    padding: 30px 0;
+}
+.signup-form form {
+    color: #999;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background: #fff;
+    /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); */
+    padding: 30px;
+}
+.signup-form label {
+    font-weight: normal;
+    font-size: 14px;
+}
+a:link, a:visited,a.hover,a.active {
+    text-decoration: underline;
+    color: crimson;
+    margin-right: 1rem;
+}
+.link-row-custom{
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+  .switch {
+    position: absolute;
+    width: 12rem;
+    height:2.5rem;
+    text-align: center;
+    /* background:#068ff6; */
+    transition: all 0.2s ease;
+    border-radius: 25px;
+    border: 1px solid #068ff6;
+  }
+   /* .switch span {
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    top: 50%;
+    left: 50%;
+    margin: -2px 0px 0px -4px;
+    background: #fff;
+    display: block;
+    transform: rotate(-45deg);
+    transition: all 0.2s ease;
+  }
+  .switch span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 12px;
+    margin-top: -8px;
+    background: #fff;
+    transition: all 0.2s ease;
+  }  */
+  input[type=radio] {
+    display: none;
+  }
+  .switch label {
+    cursor: pointer;
+    color:#068ff6;
+    width: 6rem;
+    line-height: 2.5rem;
+    transition: all 0.2s ease;
+  }
+  label[for=yes] {
+    position: absolute;
+    left: 0px;
+    /* height: 20px; */
+  }
+  label[for=no] {
+    position: absolute;
+    right: 0px;
+  }
+  /* #no:checked ~ .switch span {
+    background: #fff;
+    margin-left: -8px;
+  }
+  #no:checked ~ .switch span:after {
+    background: #fff;
+    height: 20px;
+    margin-top: -8px;
+    margin-left: 8px;
+  } */
+  #yes:checked ~ .switch label[for=yes] {
+    color: #fff;
+    background-color:#068ff6;    
+    /* height: 23px; */
+    line-height: 2.3rem;
+  }
+  #no:checked ~ .switch label[for=no] {
+    color: #fff;
+    background-color:#068ff6;
+    line-height: 2.3rem;
+  }
+ 

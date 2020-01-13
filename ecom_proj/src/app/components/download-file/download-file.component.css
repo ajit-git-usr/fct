@@ -1,0 +1,39 @@
+.mySign-up{
+    padding: 0;
+    /* width: 50%; */
+    border: 1px solid lightgray;
+    display: block;
+}
+.pageHead{
+   
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 20px;
+    color: #068ff6;
+    font-weight: 600;
+    text-align: center;
+    /* color: #068ff6; */
+}
+.list-group{
+    height: 400px;
+    overflow: auto;
+}
+.list-group li{
+    cursor: pointer;
+    font-size: 16px;
+}
+.list-group li span.download{
+    right: 8px;
+    top: 9px;
+    position: absolute;
+    font-size: 25px;
+}
+.list-group li:hover{
+    background: #efe5e5;
+}
+
+.no-files{
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}

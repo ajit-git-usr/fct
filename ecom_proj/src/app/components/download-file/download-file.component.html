@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-3">
+
+      </div>
+      <div class="col-md-6">
+        <div class="signup-form mySign-up" style="padding: 0;">
+          <div class="pageHead" *ngIf="fileList.length">Download your files </div>
+
+          <ul class="list-group" *ngIf="fileList.length">
+            <li class="list-group-item" (click)="downloadFile(file)" *ngFor="let file of fileList">
+              <span [ngClass]="getFileIcon(file)"></span> {{file.fileName}}
+              <span *ngIf="file.size">({{file.size}})</span>
+              <span class="glyphicon glyphicon-download download "></span>
+            </li>
+
+          </ul>
+          <div class="no-files" *ngIf="!fileList.length">
+            <span>No files to download!</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+</div>

@@ -1,0 +1,83 @@
+<nav class="navbar ">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand">
+        <img src="assets/img/fct.png" class="logo">
+      </a>
+      <!-- <span class="navbar-brand">LOGO</span> -->
+    </div>
+    <div class="col-md-8"></div>
+    <ul class="nav navbar-nav navbar-left">
+      <li class="active">
+        <a href="#">
+          <span class="glyphicon glyphicon-lock"></span> Login
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container m-t-100">
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-lock"></span> Login</div>
+        <div class="panel-body">
+          <form class="form-horizontal" (ngSubmit)="onSubmit()" [formGroup]="loginForm" role="form">
+            <div class="form-group" [ngClass]="displayFieldCss('email')">
+              <label for="userName" class="col-sm-3 control-label">
+                Email</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" formControlName="email" id="userName" required>
+                <app-disply-label-err-msgs [displayError]="isFieldValid('email')" errorMsg="Please enter email.">
+                </app-disply-label-err-msgs>
+              </div>
+            </div>
+            <div class="form-group" [ngClass]="displayFieldCss('password')">
+              <label for="password" class="col-sm-3 control-label">
+                Password</label>
+              <div class="col-sm-9">
+                <input type="password" formControlName="password" class="form-control" id="password" required>
+                <app-disply-label-err-msgs [displayError]="isFieldValid('password')" errorMsg="Please enter password.">
+                </app-disply-label-err-msgs>
+
+              </div>
+            </div>
+            <div class="form-group">
+              <!-- <div class="col-sm-offset-3"></div> -->
+              <div class="col-sm-offset-3 col-sm-6">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" formControlName="keepSignin" id="keepSignin" /> Keep me signed in
+                  </label>
+                </div>
+              </div>
+              <div class="col-sm-3 t-align-right">
+                <button type="submit" [disabled]="!loginForm.valid" class="btn btn-success btn-sm">
+                  Login</button>
+              </div>
+
+            </div>
+            <!-- <div class="form-group last">
+
+            </div> -->
+          </form>
+          <app-disply-label-err-msgs [displayError]="isValidCredentials" errorMsg="Please enter valid credentials.">
+          </app-disply-label-err-msgs>
+
+        </div>
+        <div class="panel-footer">
+          <a href=""> Forgot password?</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+</div>
+<!-- <app-loader *ngIf="isLoading"></app-loader> -->

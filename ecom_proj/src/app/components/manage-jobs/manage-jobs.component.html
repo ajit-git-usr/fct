@@ -1,0 +1,82 @@
+<button type="button" (click)="openModal(scheduleJobTemplate)"
+  class="col-md-offset-10 btn white-text new-schedule-job-pos z-index-9 app-back-color">
+  New Schedule Job</button>
+
+<p-table #dt [columns]="cols" [value]="manageJobs" [paginator]="true" [rows]="10" (sortFunction)="tableSort($event)"
+  [customSort]="true">
+  <ng-template pTemplate="caption">
+
+    <div class="d-block">
+      <div class="d-inlline col-md-2 t-heading t-align-left">
+        Job Results
+      </div>
+      <div class="d-inlline pos-left-relative-85">
+        <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+        <input style="width:auto" type="text" pInputText size="50" placeholder="Global Filter"
+          (input)="dt.filterGlobal($event.target.value, 'contains')">
+      </div>
+
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+        {{col.header}}
+        <p-sortIcon *ngIf="!col.isLink" [field]="col.field"></p-sortIcon>
+      </th>
+    </tr>
+    <tr>
+      <th *ngFor="let col of columns" [ngSwitch]="col.field">
+        <p-dropdown *ngIf="!col.isInput && !col.isNotVisible" [options]="col.columnList" [style]="{'width':'100%'}"
+          (onChange)="dt.filter($event.value, col.field, 'equals')"></p-dropdown>
+        <input *ngIf="col.isInput && !col.isNotVisible" class="form-control" type="text"
+          (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr [pSelectableRow]="rowData">
+      <td *ngFor="let col of columns">
+        <span *ngIf="!col.isLink">{{rowData[col.field]}}</span>
+        <span *ngIf="col.isLink" style="color:blue; cursor: pointer;"
+          (click)="showReviewJob(rowData, col.field, reviewJobTemplate)">
+          {{rowData[col.field]}}
+        </span>
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>
+
+
+<!-- Modal -->
+<ng-template #scheduleJobTemplate>
+  <div class="modal-header" data-backdrop="static" data-keyboard="false" style="text-align: center">
+    <h4 class="modal-title">
+      <div class="pageTitle">Schedule Job</div>
+    </h4>
+    <button type="button" class="close pull-right margin-top-2point5" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-schedule-job [(formData)]="cols"></app-schedule-job>
+  </div>
+
+</ng-template>
+
+<ng-template #reviewJobTemplate>
+  <div class="modal-header" style="text-align: center">
+    <h4 class="modal-title">
+      <div class="pageTitle">Review Job</div>
+    </h4>
+    <button type="button" class="close pull-right margin-top-2point5" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-review-job [(rowData)]="selectedRow" (hideDialog)="modalRef.hide()"></app-review-job>
+  </div>
+
+</ng-template>

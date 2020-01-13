@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="row">
+    <div class="signup-form" style="padding: 0;">
+      <form [formGroup]="registerForm" class="form-horizontal" (ngSubmit)="onSubmit()" style="padding: 0;padding-bottom: 1rem;padding-top: 1rem;">
+
+        <div class="pageHeader">Job Configuration</div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.Type}}</label>
+          <div class="col-xs-6 col-md-6">
+            <span class="input-group-btn">
+              <select class="form-control formFields-height custom-dropdown" formControlName="type" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                <!-- <option value="">Select</option> -->
+                <ng-container *ngFor="let option of types">
+                  <option *ngIf="option.value" [ngValue]="option.value">{{option.label}}</option>
+                </ng-container>
+              </select>
+            </span>
+          </div>
+        </div>
+
+
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.Company}}</label>
+          <div class="col-xs-6 col-md-6">
+            <span class="input-group-btn">
+              <select class="form-control formFields-height custom-dropdown" formControlName="company" [ngClass]="{ 'is-invalid': submitted && f.company.errors }">
+                <!-- <option value="">Select</option> -->
+                <ng-container *ngFor="let option of companies">
+                  <option *ngIf="option.value" [ngValue]="option.value">{{option.label}}</option>
+                </ng-container>
+              </select>
+            </span>
+          </div>
+        </div>
+
+        <div class="pageHeader">Job Information</div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.Environment}}</label>
+          <div class="col-xs-6 col-md-6">
+            <span class="input-group-btn">
+              <select class="form-control formFields-height custom-dropdown" formControlName="environment" [ngClass]="{ 'is-invalid': submitted && f.environment.errors }">
+                <!-- <option value="">Select</option> -->
+                <ng-container *ngFor="let option of environments">
+                  <option *ngIf="option.value" [ngValue]="option.value">{{option.label}}</option>
+                </ng-container>
+              </select>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">{{jobLabels.jobName}}
+            <span class="required">*</span>
+          </label>
+          <div class="col-xs-6 col-md-6">
+            <input type="text" formControlName="jobName" class="form-control formFields-height" [ngClass]="{ 'is-invalid': submitted && f.jobName.errors }"
+            />
+            <div *ngIf="submitted && f.jobName.errors" class="invalid-feedback required">
+              <div *ngIf="f.jobName.errors.required">Job Name is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf=false class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">Copy Type:</label>
+
+        </div>
+
+        <div *ngIf=false class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 11px;padding-top: 0px;color: #777;">Statement Period:</label>
+
+        </div>
+
+        <div class="pageHeader">Job Scheduling</div>
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 0.5rem;padding-top: 0px;color: #777;">{{jobLabels.runImmediately}}</label>
+          <div class="col-xs-6 col-md-6" style="margin-top: 0.5rem;">
+            <div class="toggle-radio">
+              <input type="radio" value="true" formControlName="runImmediately" id="yes">
+              <input type="radio" value="false" formControlName="runImmediately" id="no" [checked]="true">
+              <div class="switch">
+                <label for="yes" style="border-bottom-left-radius: 12px;border-top-left-radius: 12px;">Yes</label>
+                <label for="no" style="border-bottom-right-radius: 12px;border-top-right-radius: 12px;">No</label>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 1.5rem;padding-top: 0px;color: #777;">{{jobLabels.scheduleDate}}</label>
+          <div class="col-xs-6 col-md-6 m-t-1rem">
+            <p-calendar formControlName="date" [utc]='true' [monthNavigator]="true" [yearNavigator]="true" yearRange="2000:2030" [showIcon]="true"></p-calendar>
+          </div>
+        </div>
+
+        <div class="form-group margin-top-0px">
+          <label class="control-label col-xs-4 col-md-4" style="margin-top: 1rem;padding-top: 0px;color: #777;">{{jobLabels.scheduleTime}}</label>
+          <div class="col-xs-6 col-md-6 m-t-0-5rem">
+            <p-calendar formControlName="time" [utc]='true' [hourFormat]="12" [timeOnly]="true"></p-calendar>
+          </div>
+        </div>
+        <div class="row t-align-center">
+          <div [(innerHTML)]="statusMsg"></div>
+        </div>
+        <div class="form-group t-align-right" style="margin-top: 2rem;">
+          <button class="btn app-back-color white-text" style="outline:none;margin-right: 10.5rem !important;padding: 3px 18px; ">Save</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

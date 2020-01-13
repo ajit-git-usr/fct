@@ -1,0 +1,9 @@
+{
+    "API": "http://127.0.0.1:5252/api/",
+    "MANAGE_FETCH_JOBS": "Manage/FilterManageJobs",
+    "LOGIN": "Login/Login",
+    "USER_INFO": "User/GetUserInfo",
+    "APPROVEREQUEST": "Manage/ApproveRequest",
+    "GET_ORDERS": "Orders/GetOrders",
+    "GET_PRODUCTS": "Product/GetProducts"
+}

@@ -1,0 +1,11 @@
+.logo {
+    max-height: 160px;
+    /* padding-bottom: 5px; */
+  }
+  .h-120{
+    height: 120px;;
+  }
+  .c-cursor{
+  cursor: pointer;
+  }
+
