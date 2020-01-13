@@ -1,0 +1,48 @@
+{
+    "scheduleJob": {
+        "Type": "Type:",
+        "Company": "Company:",
+        "jobId": "Job ID:",
+        "Environment": "Environment:",
+        "jobName": "Job name:",
+        "Copy": "Copy:",
+        "Statement Period": "Statement period:",
+        "runImmediately": "Run immediately:",
+        "scheduleDate": "Schedule date:",
+        "scheduleTime": "Schedule time:",
+        "statusDate": "Status date:",
+        "statusTime": "Status time:",
+        "currentStatus": "Current status:"
+    },
+    "links": {
+        "productionSummary": "Production Summary",
+        "controlReport": "Control Report",
+        "downloadProofs": "Download Proofs",
+        "Approve": "Approve",
+        "cancelJob": "Cancel Job"
+    },
+    "uploadFileLables": {
+        "product": "Product:",
+        "environment": "Environment:",
+        "selectFile": "Select a File:"
+    },
+    "configurations": {
+        "alertHeading": "Alerts & Notifications",
+        "company": "Company:",
+        "format": "Format:",
+        "type": "Type:",
+        "tomail": "TO:",
+        "status": "Status/Event:",
+        "ccmail": "CC:",
+        "environment": "Environment:",
+        "bccmail": "BCC:",
+        "subject": "Subject:",
+        "bodymail": "Body:"
+    },
+    "buttonsText": {
+        "save": "Save",
+        "clear": "Clear",
+        "close": "Close",
+        "sendTestNotifications": "Send Test Notification"
+    }
+}

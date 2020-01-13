@@ -1,0 +1,15 @@
+{
+    "API": "http://localhost:51872/api/",
+    "MANAGE_FETCH_JOBS": "Manage/FilterManageJobs",
+    "LOGIN": "Login/Login",
+    "USER_INFO": "User/GetUserInfo",
+    "SCHEDULE_JOB": "Manage/SaveScheduleJob",
+    "UPLOAD_FILE": "UploadFile/UploadFiles",
+    "DOWNLOAD": "UploadFile/DownloadFile",
+    "DELETE_ASSETS": "UploadFile/DeleteFile",
+    "APPROVEREQUEST": "Manage/ApproveRequest",
+    "FECTH_DOWNLOAD_FILES": "UploadFile/FetchListOfFiles",
+    "CONFIGURE_ALERT_NOTIFICATIONS": "Config/SavConfigAlerts",
+    "FILTER_MANAGE_ASSETS": "Manage/FilterManageAssets",
+    "GET_ORDERS": "Orders/GetOrders"
+}
